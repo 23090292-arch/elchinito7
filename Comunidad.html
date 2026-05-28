@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EL CHIN1TO 7</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/*RESET*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#050816;
+    color:white;
+    display:flex;
+    overflow-x:hidden;
+	padding:20px;
+}
+
+/* FONDO */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
+}
+
+/* PARTICULAS */
+
+.particle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    background:#00e1ff;
+    border-radius:50%;
+    animation:particles 10s linear infinite;
+    opacity:.5;
+}
+
+@keyframes particles{
+
+    0%{
+        transform:translateY(100vh);
+    }
+
+    100%{
+        transform:translateY(-100vh);
+    }
+
+}
+
+/* MENU LATERAL */
+
+.sidebar{
+    width:280px;
+    height:calc(100vh - 40px);
+    background:#090b1f;
+    border-right:2px solid #8a2eff;
+    padding:20px;
+    position:fixed;
+    box-shadow:0 0 20px #8a2eff;
+	border-radius:25px;
+}
+
+.logo{
+    text-align:center;
+}
+
+.logo img{
+    width:120px;
+    border-radius:50%;
+    border:3px solid #00e1ff;
+    box-shadow:0 0 20px #00e1ff;
+}
+
+
+
+.logo p{
+    color:#c95cff;
+    margin-top:5px;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:40px;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    display:block;
+    padding:15px;
+    border-radius:15px;
+    transition:0.3s;
+    border:1px solid transparent;
+}
+
+.sidebar ul li a:hover{
+    background:#11183d;
+    color:#00d9ff;
+    border:1px solid #00d9ff;
+    box-shadow:0 0 15px #00d9ff;
+    transform:translateX(5px);
+}
+
+/* CONTENIDO */
+
+.main{
+    margin-left:300px;
+    width:calc(100% - 320px);
+    padding:40px;
+    border-radius:25px;
+	background:rgba(0,0,0,.15);
+}
+
+.titulo h1{
+    font-size:70px;
+    color:#00e1ff;
+    text-shadow:0 0 20px #00e1ff;
+}
+
+.titulo p{
+    margin-top:10px;
+    color:#c95cff;
+    font-size:20px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    margin-top:40px;
+}
+
+/* TARJETAS */
+
+.card{
+    background:rgba(10,15,40,.85);
+    border:1px solid rgba(0,225,255,.3);
+    border-radius:25px;
+    padding:25px;
+    backdrop-filter:blur(8px);
+    transition:.3s;
+    box-shadow:0 0 15px rgba(0,225,255,.2);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #00e1ff;
+}
+
+.card h2{
+    color:#c95cff;
+    margin-bottom:20px;
+}
+
+/* CHAT */
+
+.chat{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.msg{
+    background:#11183d;
+    padding:15px;
+    border-radius:15px;
+    border-left:4px solid #00e1ff;
+}
+
+.msg strong{
+    color:#00e1ff;
+}
+
+/* INPUT */
+
+.input-box{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.input-box input{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#11183d;
+    color:white;
+    outline:none;
+}
+
+.input-box button{
+    padding:15px 25px;
+    border:none;
+    border-radius:12px;
+    background:#00e1ff;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.input-box button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00e1ff;
+}
+
+/* ENCUESTA */
+
+.opcion{
+    margin-bottom:20px;
+}
+
+.barra{
+    width:100%;
+    height:18px;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progreso1{
+    width:80%;
+    height:100%;
+    background:#00e1ff;
+}
+
+.progreso2{
+    width:60%;
+    height:100%;
+    background:#b84dff;
+}
+
+.progreso3{
+    width:40%;
+    height:100%;
+    background:#ff4df2;
+}
+
+/* POSTS */
+
+.posts{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.post{
+    background:rgba(10,15,40,.85);
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid rgba(0,225,255,.2);
+    transition:.3s;
+}
+
+.post:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px #00e1ff;
+}
+
+.post img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.post-info{
+    padding:20px;
+}
+
+.post-info h3{
+    color:#00e1ff;
+    margin-bottom:10px;
+}
+
+/* STREAM */
+
+.stream{
+    text-align:center;
+}
+
+.live{
+    width:20px;
+    height:20px;
+    background:red;
+    border-radius:50%;
+    margin:auto;
+    margin-top:20px;
+    box-shadow:0 0 20px red;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.hora{
+    font-size:45px;
+    color:#00e1ff;
+    margin-top:20px;
+    text-shadow:0 0 15px #00e1ff;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:850px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .titulo h1{
+        font-size:45px;
+    }
+
+}
+
+</style>
+
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<!-- PARTICULAS -->
+
+<div class="particle" style="left:10%; animation-duration:8s;"></div>
+<div class="particle" style="left:30%; animation-duration:12s;"></div>
+<div class="particle" style="left:50%; animation-duration:9s;"></div>
+<div class="particle" style="left:70%; animation-duration:11s;"></div>
+<div class="particle" style="left:90%; animation-duration:7s;"></div>
+
+<!-- MENU -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+      <img src="imag3.jpg" width="256" height="100" alt="imagn">
+<h2>EL CHINITO 7</h2>
+
+        <p>Streamer & Creador</p>
+
+    </div>
+ <ul>   
+
+    <div class="menu">
+<nav>
+         <ul>
+
+        <li><a href="INICIO.html">
+        🏠 Inicio</a></li>
+
+        <li><a href="Sobre el streamer.html">👤 Sobre el Streamer</a></li>
+
+        <li><a href="Juegos.html">🎮 Juegos Recomendados</a></li>
+
+        <li><a href="Comunidad.html">💬 Comunidad Streamer</a></li>
+
+        <li><a href="Ajustes.html">⚙️ Ajustes</a></li>
+
+    </ul>
+   </nav> 
+
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="main">
+
+    <div class="titulo">
+
+        <h1>COMUNIDAD STREAMER</h1>
+
+        <p>Interactúa con la comunidad gamer y conoce mas mas de</p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid">
+
+        <!-- CHAT -->
+
+        <div class="card">
+
+            <h2>💬 Chat Gamer</h2>
+
+            <div class="chat">
+
+                <div class="msg">
+                    <strong>DarkPlayer:</strong>
+                    El stream de ayer estuvo épico 🔥
+                </div>
+
+                <div class="msg">
+                    <strong>NeonGamer:</strong>
+                    Juega Valorant en el próximo stream 🎮
+                </div>
+
+                <div class="msg">
+                    <strong>PixelX:</strong>
+                    La comunidad está creciendo muchísimo 😮
+                </div>
+
+            </div>
+
+            <div class="input-box">
+
+                <input type="text" id="mensaje"placeholder="Escribe un mensaje...">
+
+                <button id="enviar">Enviar</button>
+
+            </div>
+
+        </div>
+
+        <!-- STREAM -->
+
+        <div class="card stream">
+
+            <h2>🔴 Stream En Vivo</h2>
+
+            <div class="live"></div>
+
+            <div class="hora">
+
+                ONLINE
+
+            </div>
+
+            <p style="margin-top:20px;">
+                Próximo stream:
+            </p>
+
+            <p style="font-size:25px; margin-top:10px; color:#00e1ff;">
+                08:00 PM
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- POSTS -->
+
+    <div class="posts">
+
+        <div class="post">
+
+          <img src="descarga.jpg" width="300" height="168" alt="imagen">
+<div class="post-info">
+
+        <h3>🎮 Mejor Momento</h3>
+
+                <p>
+                    Victoria de mi gran torneo competitivo
+                </p>
+
+          </div>
+
+      </div>
+
+        <div class="post">
+
+            <img src="descarga2.jpg" width="300" height="168" alt="imagen">
+<div class="post-info">
+
+        <h3>🔥 Clip Viral</h3>
+
+                <p>
+                    Un poco de mis mejores clips
+                <a href="https://www.twitch.tv/ch1nito_7/clip/RealArtisticPepperoniJKanStyle-0NwT2n9E0T1r8YjI" title="Ver" target="_blank">Ver</a></p>
+
+            </div>
+
+        </div>
+
+        <div class="post">
+
+          <img src="descarga1.jpg" width="300" height="168" alt="imaen">
+<h3>🏆 Comunidad</h3>
+
+                <p>
+                    Nuevos seguidores y eventos gamer.
+                </p>
+
+      </div>
+
+  </div>
+
+    </div>
+
+    <!-- ENCUESTA -->
+
+    <div class="card" style="margin-top:35px;">
+
+        <h2>📊 Encuesta Gamer</h2>
+
+        <div class="opcion">
+
+            <p>🎮 Valorant</p>
+
+            <div class="barra">
+
+                <div class="progreso1"></div>
+
+            </div>
+
+        </div>
+
+        <div class="opcion">
+
+            <p>🔥 Fortnite</p>
+
+            <div class="barra">
+
+                <div class="progreso2"></div>
+
+            </div>
+
+        </div>
+
+        <div class="opcion">
+
+            <p>⚔️ Minecraft</p>
+
+            <div class="barra">
+
+                <div class="progreso3"></div>
+                
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const input = document.getElementById("mensaje");
+const boton = document.getElementById("enviar");
+
+boton.onclick = function(){
+
+    input.value = "";
+
+};
+
+</script>
+ <script src="script.js"></script>
+ 
+ 
+</body>
+</html>

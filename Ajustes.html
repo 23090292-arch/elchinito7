@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EL CHIN1TO 7</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+
+<!-- PARTICULAS -->
+
+<div class="particle" style="left:10%; animation-duration:8s;"></div>
+<div class="particle" style="left:30%; animation-duration:12s;"></div>
+<div class="particle" style="left:50%; animation-duration:10s;"></div>
+<div class="particle" style="left:70%; animation-duration:7s;"></div>
+<div class="particle" style="left:90%; animation-duration:9s;"></div>
+<div class="particle" style="left:10%; animation-duration:8s;"></div>
+<div class="particle" style="left:20%; animation-duration:12s;"></div>
+<div class="particle" style="left:30%; animation-duration:7s;"></div>
+<div class="particle" style="left:40%; animation-duration:10s;"></div>
+<div class="particle" style="left:50%; animation-duration:6s;"></div>
+
+<!-- MENU -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+      <img src="im4ge.jpeg" width="256" height="100">
+<h2>EL CHINITO 7</h2>
+
+        <p>Streamer & Creador</p>
+
+    </div>
+  <nav>
+    <ul>
+
+        <li><a href="INICIO.html">
+        🏠 Inicio</a></li>
+
+        <li><a href="Sobre el streamer.html">👤 Sobre el Streamer</a></li>
+
+        <li><a href="Juegos.html">🎮 Juegos Recomendados</a></li>
+
+        <li><a href="Comunidad.html">💬 Comunidad Streamer</a></li>
+
+        <li><a href="Ajustes.html">⚙️ Ajustes</a></li>
+</ul>
+  </nav>
+  
+
+    <div class="perfil">
+
+        <h3>Nivel 27</h3>
+
+        <div class="barra">
+
+            <div class="progreso"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="main">
+
+<div class="titulo">
+
+<h1>AJUSTES GAMER</h1>
+
+<p>Personaliza tu experiencia streamer</p>
+
+</div>
+
+<div class="grid">
+
+<!-- TEMAS -->
+
+<div class="card temas">
+
+<h2>🎨 Apariencia</h2>
+
+<button onclick="modoOscuro()">
+🌙 Modo Oscuro
+</button>
+
+<button onclick="modoNeon()">
+💜 Modo Neon
+</button>
+
+<button onclick="verdeGamer()">
+🔵 Verde Gamer
+</button>
+
+<button onclick="rojoRGB()">
+🔴 Rojo RGB
+</button>
+
+</div>
+
+<!-- AUDIO -->
+
+<div class="card audio">
+
+<h2>🔊 Audio</h2>
+
+<button onclick="activarMusica()">
+🎵 Activar Música
+</button>
+
+<button onclick="silenciar()">
+🔇 Silenciar
+</button>
+
+<button onclick="sonidoGamer()">
+🎧 Sonidos Gamer
+</button>
+
+<input type="range" id="volumen" min="0" max="1" step="0.1" value="0.5">
+
+</div>
+
+<!-- EFECTOS -->
+
+<div class="card">
+
+<h2>✨ Efectos Visuales</h2>
+
+<div class="switch">
+
+<p>Partículas Neon</p>
+
+<div class="toggle" onclick="toggleParticulas(this)"></div>
+
+</div>
+
+<div class="switch">
+
+<p>Luces RGB</p>
+
+<div class="toggle" onclick="toggleRGB(this)"></div>
+
+</div>
+
+<div class="switch">
+
+<p>Modo Cyberpunk</p>
+
+<div class="toggle" onclick="toggleCyber(this)"></div>
+
+</div>
+
+</div>
+
+<!-- CURSOR -->
+
+<div class="card cursor">
+
+<h2>🖱️ Cursor Gamer</h2>
+
+<button onclick="cursorMira()">
+🎯 Mira
+</button>
+
+<button onclick="cursorControl()">
+🎮 Control
+</button>
+
+<button onclick="cursorEspada()">
+⚔️ Espada Pixel
+</button>
+
+</div>
+
+<!-- STREAM -->
+
+<div class="card">
+
+<h2>🔴 Estado del Stream</h2>
+
+<p>🟢 Stream Online</p>
+
+<p>🎤 Micrófono Activo</p>
+
+<p>📷 Cámara Encendida</p>
+
+<p>💬 Chat Activo</p>
+
+</div>
+
+<!-- PERFIL -->
+
+<div class="card perfil">
+
+<div class="avatar">
+<img src="im4ge.jpeg" width="120" height="120"></div>
+
+<h2>EL CHINITO 7</h2>
+
+<p>Streamer Nivel 27</p>
+
+<div class="barra">
+
+<div class="progreso"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<script src="script.js"></script>
+
+
+</body>
+</html>

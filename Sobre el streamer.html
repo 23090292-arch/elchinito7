@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EL CHIN1TO 7</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/*RESET*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+	
+}
+
+body{
+    background:#050816;
+    color:white;
+    display:flex;
+    overflow-x:hidden;
+	padding:20px;
+}
+
+/* FONDO */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
+}
+
+/* PARTICULAS */
+
+.particle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    background:#00e1ff;
+    border-radius:50%;
+    animation:particles 10s linear infinite;
+    opacity:.5;
+}
+
+@keyframes particles{
+
+    0%{
+        transform:translateY(100vh);
+    }
+
+    100%{
+        transform:translateY(-100vh);
+    }
+
+}
+
+/* MENU LATERAL */
+
+.sidebar{
+    width:280px;
+    height:calc(100vh - 40px);
+    background:#090b1f;
+    border-right:2px solid #8a2eff;
+    padding:20px;
+    position:fixed;
+    box-shadow:0 0 20px #8a2eff;
+	border-radius:25px;
+}
+
+.logo{
+    text-align:center;
+}
+
+.logo img{
+    width:120px;
+    border-radius:50%;
+    border:3px solid #00e1ff;
+    box-shadow:0 0 20px #00e1ff;
+}
+
+.logo h2{
+    margin-top:15px;
+    font-size:32px;
+    text-shadow:0 0 15px #00d9ff;
+}
+
+.logo p{
+    color:#c95cff;
+    margin-top:5px;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:40px;
+}
+
+.sidebar ul li{
+    margin:20px 0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    display:block;
+    padding:15px;
+    border-radius:15px;
+    transition:0.3s;
+    border:1px solid transparent;
+}
+
+.sidebar ul li a:hover{
+    background:#11183d;
+    color:#00d9ff;
+    border:1px solid #00d9ff;
+    box-shadow:0 0 15px #00d9ff;
+    transform:translateX(5px);
+}
+
+/* CONTENIDO */
+
+.main{
+    margin-left:300px;
+    width:calc(100% - 320px);
+    padding:40px;
+    border-radius:25px;
+	background:rgba(0,0,0,.15);
+}
+
+/* HERO */
+
+.hero{
+    background:rgba(10,15,40,.85);
+    border:1px solid rgba(0,225,255,.3);
+    border-radius:30px;
+    padding:50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 25px rgba(0,225,255,.3);
+}
+
+.perfil{
+    text-align:center;
+}
+
+.perfil img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #00e1ff;
+    box-shadow:0 0 30px #00e1ff;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+.perfil h2{
+    margin-top:20px;
+    color:#00e1ff;
+    font-size:40px;
+    text-shadow:0 0 15px #00e1ff;
+}
+
+.perfil p{
+    color:#c95cff;
+    margin-top:10px;
+}
+
+.info{
+    flex:1;
+}
+
+.info h1{
+    font-size:70px;
+    text-shadow:0 0 20px #00e1ff;
+}
+
+.info p{
+    margin-top:25px;
+    font-size:20px;
+    line-height:38px;
+}
+
+/* ESTADISTICAS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:rgba(10,15,40,.85);
+    border:1px solid rgba(0,225,255,.2);
+    border-radius:25px;
+    padding:25px;
+    transition:.3s;
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 15px rgba(0,225,255,.2);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px #00e1ff;
+}
+
+.card h2{
+    color:#c95cff;
+    margin-bottom:15px;
+}
+
+.numero{
+    font-size:45px;
+    color:#00e1ff;
+    text-shadow:0 0 15px #00e1ff;
+}
+
+/* HISTORIA */
+
+.historia{
+    margin-top:40px;
+    background:rgba(10,15,40,.85);
+    border-radius:30px;
+    padding:40px;
+    border:1px solid rgba(0,225,255,.2);
+    box-shadow:0 0 20px rgba(0,225,255,.2);
+}
+
+.historia h1{
+    color:#00e1ff;
+    font-size:50px;
+    text-shadow:0 0 15px #00e1ff;
+}
+
+.historia p{
+    margin-top:25px;
+    line-height:38px;
+    font-size:20px;
+}
+
+/* SETUP */
+
+.setup{
+    margin-top:40px;
+}
+
+.setup-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:25px;
+}
+
+.item{
+    background:rgba(10,15,40,.85);
+    border-radius:20px;
+    padding:25px;
+    border:1px solid rgba(0,225,255,.2);
+    transition:.3s;
+}
+
+.item:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 20px #00e1ff;
+}
+
+.item h3{
+    color:#c95cff;
+    margin-bottom:15px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .info h1{
+        font-size:50px;
+    }
+
+}
+
+@media(max-width:850px){
+
+    body{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+}
+/* BOTONES */
+.links{
+    display:flex;
+    justify-content:center;
+    gap:100px;
+    margin-top:100px;
+}
+
+.links a{
+    padding:40px 60px;
+    border:2px solid #00ffff;
+    color:#00ffff;
+    text-decoration:none;
+    border-radius:20px;
+    transition:0.5s;
+}
+
+.links a:hover{
+    background:#00ffff;
+    color:black;
+    box-shadow:0 0 20px #00ffff;
+}
+
+</style>
+<link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+<!-- PARTICULAS -->
+
+<div class="particle" style="left:10%; animation-duration:8s;"></div>
+<div class="particle" style="left:30%; animation-duration:12s;"></div>
+<div class="particle" style="left:50%; animation-duration:10s;"></div>
+<div class="particle" style="left:70%; animation-duration:7s;"></div>
+<div class="particle" style="left:90%; animation-duration:9s;"></div>
+
+<!-- MENU -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+      <img src="imagen3.jpg" width="265" height="100" alt="imágenes ">
+<h2>EL CHINITO 7</h2>
+
+        <p>Streamer & Creador</p>
+
+    </div>
+
+    <ul>
+
+    <div class="menu">
+
+       <nav>
+        <ul>
+
+        <li><a href="INICIO.html">
+        🏠 Inicio</a></li>
+
+        <li><a href="Sobre el streamer.html">👤 Sobre el Streamer</a></li>
+
+        <li><a href="Juegos.html">🎮 Juegos Recomendados</a></li>
+
+        <li><a href="Comunidad.html">💬 Comunidad Streamer</a></li>
+
+        <li><a href="Ajustes.html">⚙️ Ajustes</a></li>
+
+    </ul>
+  </nav>
+    </div>
+
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="main">
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <div class="perfil">
+
+          <img src="im4ge.jpeg" width="1315" height="1197" alt="imagn">
+<h2>EL CHINITO 7</h2>
+
+            <p>Streamer & Gamer Profesional</p>
+
+        </div>
+
+        <div class="info">
+
+            <h1>SOBRE EL STREAMER</h1>
+
+            <p>
+                Hola, soy EL CHINITO 7 🎮🔥
+                Un creador de contenido apasionado por los videojuegos,
+                la comunidad gamer y las experiencias épicas en stream.
+                Mi objetivo es entretener, compartir aventuras y crear
+                una comunidad divertida llena de energía y emoción.Espero les guste este canal y hay alguna recomendacion acerca mis videos pueden comentarme para mejorar.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ESTADISTICAS -->
+
+    <div class="stats">
+
+        <div class="card">
+
+            <h2>👥 Seguidores</h2>
+
+            <div class="numero">12.5K</div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🎥 Streams</h2>
+
+            <div class="numero">128</div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>⏰ Horas</h2>
+
+            <div class="numero">350+</div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>🏆 Torneos</h2>
+
+            <div class="numero">15</div>
+
+        </div>
+
+    </div>
+
+    <!-- HISTORIA -->
+
+    <div class="historia">
+
+        <h1>📖 Mi Historia</h1>
+
+        <p>
+            Todo comenzó jugando videojuegos por diversión. Poco a poco
+            descubrí el mundo del streaming y decidí compartir mis partidas,
+            experiencias y momentos más épicos con otras personas.Aunque parezca algo aburrido yo me la paso super bien.
+            Gracias al apoyo de la comunidad, el canal va creciendo hasta
+            convertirse en un espacio donde gamers de diferentes lugares
+            pueden convivir, divertirse y disfrutar juntos.
+      </p>
+
+    </div>
+
+    <!-- SETUP -->
+
+    <div class="setup">
+
+        <div class="setup-grid">
+
+            <div class="item">
+
+                <h3>🖥️ Setup Gamer</h3>
+
+                <p>PC RGB, monitor 144Hz y luces neon.</p>
+
+            </div>
+
+            <div class="item">
+
+                <h3>🎮 Juegos Favoritos</h3>
+
+                <p>Valorant, Fortnite, Minecraft y GTA V.</p>
+
+            </div>
+
+            <div class="item">
+
+                <h3>📅 Horario</h3>
+
+                <p>Streams de lunes a sábado a las 8 PM.</p>
+
+            </div>
+
+            <div class="item">
+
+                <h3>🎯 Objetivo</h3>
+
+                <p>Crear una gran comunidad gamer.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+     <!-- LINKS -->
+    <div class="links">
+      <a href="https://www.twitch.tv/ch1nito_7" title="🤖Twitch" target="_blank" class="redes">🤖Twitch</a>
+          
+          <a href="https://www.tiktok.com/@el_ch1nito_7?_r=1&_t=ZS-95T5tJB5uFg" title="🐛TikTok" target="_blank" class="redes">🐛TikTok</a>
+       
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
+
